@@ -1,0 +1,31 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "apigee": "https://cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/",
+    "Organization": "apigee:organizations",
+    "ApiProxy": "apigee:organizations.apis",
+    "Environment": "apigee:organizations.environments",
+    "ApiProduct": "apigee:organizations.apiproducts",
+    "Developer": "apigee:organizations.developers",
+    "Deployment": "apigee:organizations.environments.apis.revisions.deployments",
+    "name": "schema:name",
+    "displayName": "schema:alternateName",
+    "description": "schema:description",
+    "state": "schema:status",
+    "email": "schema:email",
+    "firstName": "schema:givenName",
+    "lastName": "schema:familyName",
+    "userName": "schema:identifier",
+    "projectId": "schema:identifier",
+    "createdAt": "schema:dateCreated",
+    "lastModifiedAt": "schema:dateModified",
+    "environments": {
+      "@id": "apigee:Environment",
+      "@type": "@id"
+    },
+    "proxies": {
+      "@id": "apigee:ApiProxy",
+      "@type": "@id"
+    }
+  }
+}

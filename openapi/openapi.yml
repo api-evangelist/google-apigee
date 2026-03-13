@@ -1,0 +1,580 @@
+openapi: 3.1.0
+info:
+  title: Google Apigee API
+  description: >-
+    The Apigee API enables full lifecycle API management including creating and
+    deploying API proxies, managing organizations and environments, configuring
+    API products, and monitoring API analytics.
+  version: v1
+  contact:
+    name: Google Cloud
+    url: https://cloud.google.com/apigee/docs
+servers:
+  - url: https://apigee.googleapis.com
+paths:
+  /v1/organizations:
+    get:
+      operationId: listOrganizations
+      summary: List organizations
+      description: Lists Apigee organizations accessible to the caller.
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListOrganizationsResponse'
+  /v1/organizations/{organization}:
+    get:
+      operationId: getOrganization
+      summary: Get an organization
+      description: Gets the profile for an Apigee organization.
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Organization'
+  /v1/organizations/{organization}/apis:
+    get:
+      operationId: listApiProxies
+      summary: List API proxies
+      description: Lists API proxies in an organization.
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListApiProxiesResponse'
+    post:
+      operationId: createApiProxy
+      summary: Create an API proxy
+      description: Creates an API proxy in an organization.
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: name
+          in: query
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiProxy'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiProxyRevision'
+  /v1/organizations/{organization}/apis/{api}:
+    get:
+      operationId: getApiProxy
+      summary: Get an API proxy
+      description: Gets an API proxy including its revisions.
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: api
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiProxy'
+    delete:
+      operationId: deleteApiProxy
+      summary: Delete an API proxy
+      description: Deletes an API proxy and all its revisions.
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: api
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+  /v1/organizations/{organization}/environments:
+    get:
+      operationId: listEnvironments
+      summary: List environments
+      description: Lists environments in an organization.
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: string
+    post:
+      operationId: createEnvironment
+      summary: Create an environment
+      description: Creates an environment in an organization.
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Environment'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+  /v1/organizations/{organization}/environments/{environment}:
+    get:
+      operationId: getEnvironment
+      summary: Get an environment
+      description: Gets the profile for an environment.
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Environment'
+    delete:
+      operationId: deleteEnvironment
+      summary: Delete an environment
+      description: Deletes an environment from an organization.
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Operation'
+  /v1/organizations/{organization}/environments/{environment}/apis/{api}/revisions/{revision}/deployments:
+    get:
+      operationId: getDeployment
+      summary: Get deployment status
+      description: Gets the deployment status of an API proxy revision.
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: environment
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: api
+          in: path
+          required: true
+          schema:
+            type: string
+        - name: revision
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Deployment'
+  /v1/organizations/{organization}/apiproducts:
+    get:
+      operationId: listApiProducts
+      summary: List API products
+      description: Lists API products in an organization.
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListApiProductsResponse'
+    post:
+      operationId: createApiProduct
+      summary: Create an API product
+      description: Creates an API product in an organization.
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ApiProduct'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ApiProduct'
+  /v1/organizations/{organization}/developers:
+    get:
+      operationId: listDevelopers
+      summary: List developers
+      description: Lists developers in an organization.
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ListDevelopersResponse'
+    post:
+      operationId: createDeveloper
+      summary: Create a developer
+      description: Creates a developer in an organization.
+      parameters:
+        - name: organization
+          in: path
+          required: true
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Developer'
+      responses:
+        '200':
+          description: Successful response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Developer'
+components:
+  schemas:
+    Organization:
+      type: object
+      properties:
+        name:
+          type: string
+          description: The organization resource name.
+        displayName:
+          type: string
+        description:
+          type: string
+        projectId:
+          type: string
+        analyticsRegion:
+          type: string
+        runtimeType:
+          type: string
+          enum:
+            - RUNTIME_TYPE_UNSPECIFIED
+            - CLOUD
+            - HYBRID
+        state:
+          type: string
+          enum:
+            - STATE_UNSPECIFIED
+            - CREATING
+            - ACTIVE
+            - DELETING
+        createdAt:
+          type: string
+          format: date-time
+        lastModifiedAt:
+          type: string
+          format: date-time
+        environments:
+          type: array
+          items:
+            type: string
+    ApiProxy:
+      type: object
+      properties:
+        name:
+          type: string
+        revision:
+          type: array
+          items:
+            type: string
+        latestRevisionId:
+          type: string
+        metaData:
+          type: object
+          properties:
+            createdAt:
+              type: string
+            lastModifiedAt:
+              type: string
+    ApiProxyRevision:
+      type: object
+      properties:
+        name:
+          type: string
+        revision:
+          type: string
+        basepaths:
+          type: array
+          items:
+            type: string
+        displayName:
+          type: string
+        description:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        lastModifiedAt:
+          type: string
+          format: date-time
+    Environment:
+      type: object
+      properties:
+        name:
+          type: string
+        displayName:
+          type: string
+        description:
+          type: string
+        state:
+          type: string
+          enum:
+            - STATE_UNSPECIFIED
+            - CREATING
+            - ACTIVE
+            - DELETING
+        createdAt:
+          type: string
+          format: date-time
+        lastModifiedAt:
+          type: string
+          format: date-time
+    Deployment:
+      type: object
+      properties:
+        environment:
+          type: string
+        apiProxy:
+          type: string
+        revision:
+          type: string
+        deployStartTime:
+          type: string
+          format: date-time
+        state:
+          type: string
+          enum:
+            - RUNTIME_STATE_UNSPECIFIED
+            - READY
+            - PROGRESSING
+            - ERROR
+    ApiProduct:
+      type: object
+      properties:
+        name:
+          type: string
+        displayName:
+          type: string
+        description:
+          type: string
+        approvalType:
+          type: string
+          enum:
+            - manual
+            - auto
+        proxies:
+          type: array
+          items:
+            type: string
+        environments:
+          type: array
+          items:
+            type: string
+        quota:
+          type: string
+        quotaInterval:
+          type: string
+        quotaTimeUnit:
+          type: string
+        scopes:
+          type: array
+          items:
+            type: string
+        attributes:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              value:
+                type: string
+        createdAt:
+          type: string
+          format: date-time
+        lastModifiedAt:
+          type: string
+          format: date-time
+    Developer:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+        firstName:
+          type: string
+        lastName:
+          type: string
+        userName:
+          type: string
+        organizationName:
+          type: string
+        status:
+          type: string
+          enum:
+            - active
+            - inactive
+        apps:
+          type: array
+          items:
+            type: string
+        developerId:
+          type: string
+        createdAt:
+          type: string
+          format: date-time
+        lastModifiedAt:
+          type: string
+          format: date-time
+        attributes:
+          type: array
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+              value:
+                type: string
+    Operation:
+      type: object
+      properties:
+        name:
+          type: string
+        done:
+          type: boolean
+        metadata:
+          type: object
+        response:
+          type: object
+        error:
+          type: object
+    ListOrganizationsResponse:
+      type: object
+      properties:
+        organizations:
+          type: array
+          items:
+            $ref: '#/components/schemas/Organization'
+    ListApiProxiesResponse:
+      type: object
+      properties:
+        proxies:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApiProxy'
+    ListApiProductsResponse:
+      type: object
+      properties:
+        apiProduct:
+          type: array
+          items:
+            $ref: '#/components/schemas/ApiProduct'
+    ListDevelopersResponse:
+      type: object
+      properties:
+        developer:
+          type: array
+          items:
+            $ref: '#/components/schemas/Developer'

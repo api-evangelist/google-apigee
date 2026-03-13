@@ -1,0 +1,48 @@
+name: Google Apigee
+description: >-
+  Google Apigee is a full-lifecycle API management platform that enables
+  enterprises to design, secure, deploy, monitor, and scale APIs. Apigee
+  provides a programmable API proxy layer with policies for security, rate
+  limiting, transformation, and mediation. It supports REST, SOAP, GraphQL, and
+  gRPC protocols, and includes advanced analytics, developer portal capabilities,
+  and monetization features for building and managing API programs at scale.
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+url: https://raw.githubusercontent.com/api-evangelist/google-apigee/refs/heads/main/apis.yml
+created: '2026-03-13'
+modified: '2026-03-13'
+specificationVersion: '0.18'
+tags:
+  - API Management
+  - API Proxy
+  - API Analytics
+  - API Security
+  - Developer Portal
+  - Google Cloud
+apis:
+  - name: Google Apigee API
+    description: >-
+      The Apigee API provides programmatic access to manage API proxies,
+      environments, organizations, developers, API products, and analytics. It
+      enables full lifecycle management of APIs including deployment, security
+      policy configuration, traffic management, and monitoring.
+    humanURL: https://cloud.google.com/apigee/docs
+    baseURL: https://apigee.googleapis.com
+    properties:
+      - type: OpenAPI
+        url: openapi/openapi.yml
+      - type: JSONSchema
+        url: json-schema/json-schema.yml
+    tags:
+      - API Management
+      - API Proxy
+      - Analytics
+common:
+  - type: GettingStarted
+    url: https://cloud.google.com/apigee/docs/api-platform/get-started/what-apigee
+  - type: Pricing
+    url: https://cloud.google.com/apigee/pricing
+  - type: JSONLD
+    url: json-ld/json-ld.json
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com
