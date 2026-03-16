@@ -1,3 +1,4 @@
+aid: google-apigee
 name: Google Apigee
 description: >-
   Google Apigee is a full-lifecycle API management platform that enables
@@ -6,11 +7,12 @@ description: >-
   limiting, transformation, and mediation. It supports REST, SOAP, GraphQL, and
   gRPC protocols, and includes advanced analytics, developer portal capabilities,
   and monetization features for building and managing API programs at scale.
+type: Index
 image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 url: https://raw.githubusercontent.com/api-evangelist/google-apigee/refs/heads/main/apis.yml
 created: '2026-03-13'
-modified: '2026-03-13'
-specificationVersion: '0.18'
+modified: '2026-03-16'
+specificationVersion: '0.19'
 tags:
   - API Management
   - API Proxy
@@ -19,7 +21,8 @@ tags:
   - Developer Portal
   - Google Cloud
 apis:
-  - name: Google Apigee API
+  - aid: google-apigee:google-apigee
+    name: Google Apigee API
     description: >-
       The Apigee API provides programmatic access to manage API proxies,
       environments, organizations, developers, API products, and analytics. It
@@ -37,7 +40,7 @@ apis:
       - API Proxy
       - Analytics
 common:
-  - type: GettingStarted
+  - type: Getting Started
     url: https://cloud.google.com/apigee/docs/api-platform/get-started/what-apigee
   - type: Pricing
     url: https://cloud.google.com/apigee/pricing
