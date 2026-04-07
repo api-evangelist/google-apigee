@@ -24,6 +24,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ListOrganizationsResponse'
+      tags:
+        - Organizations
   /v1/organizations/{organization}:
     get:
       operationId: getOrganization
@@ -42,6 +44,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Organization'
+      tags:
+        - Organizations
   /v1/organizations/{organization}/apis:
     get:
       operationId: listApiProxies
@@ -60,6 +64,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ListApiProxiesResponse'
+      tags:
+        - Organizations
     post:
       operationId: createApiProxy
       summary: Google Apigee Create an API proxy
@@ -87,6 +93,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiProxyRevision'
+      tags:
+        - Organizations
   /v1/organizations/{organization}/apis/{api}:
     get:
       operationId: getApiProxy
@@ -110,6 +118,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiProxy'
+      tags:
+        - Organizations
     delete:
       operationId: deleteApiProxy
       summary: Google Apigee Delete an API proxy
@@ -128,6 +138,8 @@ paths:
       responses:
         '200':
           description: Successful response
+      tags:
+        - Organizations
   /v1/organizations/{organization}/environments:
     get:
       operationId: listEnvironments
@@ -148,6 +160,8 @@ paths:
                 type: array
                 items:
                   type: string
+      tags:
+        - Organizations
     post:
       operationId: createEnvironment
       summary: Google Apigee Create an environment
@@ -171,6 +185,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Operation'
+      tags:
+        - Organizations
   /v1/organizations/{organization}/environments/{environment}:
     get:
       operationId: getEnvironment
@@ -194,6 +210,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Environment'
+      tags:
+        - Organizations
     delete:
       operationId: deleteEnvironment
       summary: Google Apigee Delete an environment
@@ -216,6 +234,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Operation'
+      tags:
+        - Organizations
   /v1/organizations/{organization}/environments/{environment}/apis/{api}/revisions/{revision}/deployments:
     get:
       operationId: getDeployment
@@ -249,6 +269,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Deployment'
+      tags:
+        - Organizations
   /v1/organizations/{organization}/apiproducts:
     get:
       operationId: listApiProducts
@@ -267,6 +289,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ListApiProductsResponse'
+      tags:
+        - Organizations
     post:
       operationId: createApiProduct
       summary: Google Apigee Create an API product
@@ -290,6 +314,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ApiProduct'
+      tags:
+        - Organizations
   /v1/organizations/{organization}/developers:
     get:
       operationId: listDevelopers
@@ -308,6 +334,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/ListDevelopersResponse'
+      tags:
+        - Organizations
     post:
       operationId: createDeveloper
       summary: Google Apigee Create a developer
@@ -331,6 +359,8 @@ paths:
             application/json:
               schema:
                 $ref: '#/components/schemas/Developer'
+      tags:
+        - Organizations
 components:
   schemas:
     Organization:
@@ -578,3 +608,5 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Developer'
+tags:
+  - name: Organizations
