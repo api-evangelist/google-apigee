@@ -15,7 +15,7 @@ paths:
   /v1/organizations:
     get:
       operationId: listOrganizations
-      summary: List organizations
+      summary: Google Apigee List organizations
       description: Lists Apigee organizations accessible to the caller.
       responses:
         '200':
@@ -27,7 +27,7 @@ paths:
   /v1/organizations/{organization}:
     get:
       operationId: getOrganization
-      summary: Get an organization
+      summary: Google Apigee Get an organization
       description: Gets the profile for an Apigee organization.
       parameters:
         - name: organization
@@ -45,7 +45,7 @@ paths:
   /v1/organizations/{organization}/apis:
     get:
       operationId: listApiProxies
-      summary: List API proxies
+      summary: Google Apigee List API proxies
       description: Lists API proxies in an organization.
       parameters:
         - name: organization
@@ -62,7 +62,7 @@ paths:
                 $ref: '#/components/schemas/ListApiProxiesResponse'
     post:
       operationId: createApiProxy
-      summary: Create an API proxy
+      summary: Google Apigee Create an API proxy
       description: Creates an API proxy in an organization.
       parameters:
         - name: organization
@@ -90,7 +90,7 @@ paths:
   /v1/organizations/{organization}/apis/{api}:
     get:
       operationId: getApiProxy
-      summary: Get an API proxy
+      summary: Google Apigee Get an API proxy
       description: Gets an API proxy including its revisions.
       parameters:
         - name: organization
@@ -112,7 +112,7 @@ paths:
                 $ref: '#/components/schemas/ApiProxy'
     delete:
       operationId: deleteApiProxy
-      summary: Delete an API proxy
+      summary: Google Apigee Delete an API proxy
       description: Deletes an API proxy and all its revisions.
       parameters:
         - name: organization
@@ -131,7 +131,7 @@ paths:
   /v1/organizations/{organization}/environments:
     get:
       operationId: listEnvironments
-      summary: List environments
+      summary: Google Apigee List environments
       description: Lists environments in an organization.
       parameters:
         - name: organization
@@ -150,7 +150,7 @@ paths:
                   type: string
     post:
       operationId: createEnvironment
-      summary: Create an environment
+      summary: Google Apigee Create an environment
       description: Creates an environment in an organization.
       parameters:
         - name: organization
@@ -174,7 +174,7 @@ paths:
   /v1/organizations/{organization}/environments/{environment}:
     get:
       operationId: getEnvironment
-      summary: Get an environment
+      summary: Google Apigee Get an environment
       description: Gets the profile for an environment.
       parameters:
         - name: organization
@@ -196,7 +196,7 @@ paths:
                 $ref: '#/components/schemas/Environment'
     delete:
       operationId: deleteEnvironment
-      summary: Delete an environment
+      summary: Google Apigee Delete an environment
       description: Deletes an environment from an organization.
       parameters:
         - name: organization
@@ -219,7 +219,7 @@ paths:
   /v1/organizations/{organization}/environments/{environment}/apis/{api}/revisions/{revision}/deployments:
     get:
       operationId: getDeployment
-      summary: Get deployment status
+      summary: Google Apigee Get deployment status
       description: Gets the deployment status of an API proxy revision.
       parameters:
         - name: organization
@@ -252,7 +252,7 @@ paths:
   /v1/organizations/{organization}/apiproducts:
     get:
       operationId: listApiProducts
-      summary: List API products
+      summary: Google Apigee List API products
       description: Lists API products in an organization.
       parameters:
         - name: organization
@@ -269,7 +269,7 @@ paths:
                 $ref: '#/components/schemas/ListApiProductsResponse'
     post:
       operationId: createApiProduct
-      summary: Create an API product
+      summary: Google Apigee Create an API product
       description: Creates an API product in an organization.
       parameters:
         - name: organization
@@ -293,7 +293,7 @@ paths:
   /v1/organizations/{organization}/developers:
     get:
       operationId: listDevelopers
-      summary: List developers
+      summary: Google Apigee List developers
       description: Lists developers in an organization.
       parameters:
         - name: organization
@@ -310,7 +310,7 @@ paths:
                 $ref: '#/components/schemas/ListDevelopersResponse'
     post:
       operationId: createDeveloper
-      summary: Create a developer
+      summary: Google Apigee Create a developer
       description: Creates a developer in an organization.
       parameters:
         - name: organization
