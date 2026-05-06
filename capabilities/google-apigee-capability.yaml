@@ -1,0 +1,750 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Google Apigee API
+  description: The Apigee API enables full lifecycle API management including creating and deploying API proxies, managing
+    organizations and environments, configuring API products, and monitoring API analytics.
+  tags:
+  - Google
+  - Apigee
+  - API
+  created: '2026-05-06'
+  modified: '2026-05-06'
+capability:
+  consumes:
+  - type: http
+    namespace: google-apigee
+    baseUri: https://apigee.googleapis.com
+    description: Google Apigee API HTTP API.
+    resources:
+    - name: v1-organizations
+      path: /v1/organizations
+      operations:
+      - name: listorganizations
+        method: GET
+        description: Google Apigee List organizations
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-organizations-organization
+      path: /v1/organizations/{organization}
+      operations:
+      - name: getorganization
+        method: GET
+        description: Google Apigee Get an organization
+        inputParameters:
+        - name: organization
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-organizations-organization-apis
+      path: /v1/organizations/{organization}/apis
+      operations:
+      - name: listapiproxies
+        method: GET
+        description: Google Apigee List API proxies
+        inputParameters:
+        - name: organization
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createapiproxy
+        method: POST
+        description: Google Apigee Create an API proxy
+        inputParameters:
+        - name: organization
+          in: path
+          type: string
+          required: true
+        - name: name
+          in: query
+          type: string
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-organizations-organization-apis-api
+      path: /v1/organizations/{organization}/apis/{api}
+      operations:
+      - name: getapiproxy
+        method: GET
+        description: Google Apigee Get an API proxy
+        inputParameters:
+        - name: organization
+          in: path
+          type: string
+          required: true
+        - name: api
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: deleteapiproxy
+        method: DELETE
+        description: Google Apigee Delete an API proxy
+        inputParameters:
+        - name: organization
+          in: path
+          type: string
+          required: true
+        - name: api
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-organizations-organization-environments
+      path: /v1/organizations/{organization}/environments
+      operations:
+      - name: listenvironments
+        method: GET
+        description: Google Apigee List environments
+        inputParameters:
+        - name: organization
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createenvironment
+        method: POST
+        description: Google Apigee Create an environment
+        inputParameters:
+        - name: organization
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-organizations-organization-environments-envir
+      path: /v1/organizations/{organization}/environments/{environment}
+      operations:
+      - name: getenvironment
+        method: GET
+        description: Google Apigee Get an environment
+        inputParameters:
+        - name: organization
+          in: path
+          type: string
+          required: true
+        - name: environment
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: deleteenvironment
+        method: DELETE
+        description: Google Apigee Delete an environment
+        inputParameters:
+        - name: organization
+          in: path
+          type: string
+          required: true
+        - name: environment
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-organizations-organization-environments-envir
+      path: /v1/organizations/{organization}/environments/{environment}/apis/{api}/revisions/{revision}/deployments
+      operations:
+      - name: getdeployment
+        method: GET
+        description: Google Apigee Get deployment status
+        inputParameters:
+        - name: organization
+          in: path
+          type: string
+          required: true
+        - name: environment
+          in: path
+          type: string
+          required: true
+        - name: api
+          in: path
+          type: string
+          required: true
+        - name: revision
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-organizations-organization-apiproducts
+      path: /v1/organizations/{organization}/apiproducts
+      operations:
+      - name: listapiproducts
+        method: GET
+        description: Google Apigee List API products
+        inputParameters:
+        - name: organization
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createapiproduct
+        method: POST
+        description: Google Apigee Create an API product
+        inputParameters:
+        - name: organization
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    - name: v1-organizations-organization-developers
+      path: /v1/organizations/{organization}/developers
+      operations:
+      - name: listdevelopers
+        method: GET
+        description: Google Apigee List developers
+        inputParameters:
+        - name: organization
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+      - name: createdeveloper
+        method: POST
+        description: Google Apigee Create a developer
+        inputParameters:
+        - name: organization
+          in: path
+          type: string
+          required: true
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+  exposes:
+  - type: rest
+    port: 8080
+    namespace: google-apigee-rest
+    description: REST adapter for Google Apigee API.
+    resources:
+    - path: /v1/organizations
+      name: listorganizations
+      operations:
+      - method: GET
+        name: listorganizations
+        description: Google Apigee List organizations
+        call: google-apigee.listorganizations
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/organizations/{organization}
+      name: getorganization
+      operations:
+      - method: GET
+        name: getorganization
+        description: Google Apigee Get an organization
+        call: google-apigee.getorganization
+        with:
+          organization: rest.organization
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/organizations/{organization}/apis
+      name: listapiproxies
+      operations:
+      - method: GET
+        name: listapiproxies
+        description: Google Apigee List API proxies
+        call: google-apigee.listapiproxies
+        with:
+          organization: rest.organization
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/organizations/{organization}/apis
+      name: createapiproxy
+      operations:
+      - method: POST
+        name: createapiproxy
+        description: Google Apigee Create an API proxy
+        call: google-apigee.createapiproxy
+        with:
+          organization: rest.organization
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/organizations/{organization}/apis/{api}
+      name: getapiproxy
+      operations:
+      - method: GET
+        name: getapiproxy
+        description: Google Apigee Get an API proxy
+        call: google-apigee.getapiproxy
+        with:
+          organization: rest.organization
+          api: rest.api
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/organizations/{organization}/apis/{api}
+      name: deleteapiproxy
+      operations:
+      - method: DELETE
+        name: deleteapiproxy
+        description: Google Apigee Delete an API proxy
+        call: google-apigee.deleteapiproxy
+        with:
+          organization: rest.organization
+          api: rest.api
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/organizations/{organization}/environments
+      name: listenvironments
+      operations:
+      - method: GET
+        name: listenvironments
+        description: Google Apigee List environments
+        call: google-apigee.listenvironments
+        with:
+          organization: rest.organization
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/organizations/{organization}/environments
+      name: createenvironment
+      operations:
+      - method: POST
+        name: createenvironment
+        description: Google Apigee Create an environment
+        call: google-apigee.createenvironment
+        with:
+          organization: rest.organization
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/organizations/{organization}/environments/{environment}
+      name: getenvironment
+      operations:
+      - method: GET
+        name: getenvironment
+        description: Google Apigee Get an environment
+        call: google-apigee.getenvironment
+        with:
+          organization: rest.organization
+          environment: rest.environment
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/organizations/{organization}/environments/{environment}
+      name: deleteenvironment
+      operations:
+      - method: DELETE
+        name: deleteenvironment
+        description: Google Apigee Delete an environment
+        call: google-apigee.deleteenvironment
+        with:
+          organization: rest.organization
+          environment: rest.environment
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/organizations/{organization}/environments/{environment}/apis/{api}/revisions/{revision}/deployments
+      name: getdeployment
+      operations:
+      - method: GET
+        name: getdeployment
+        description: Google Apigee Get deployment status
+        call: google-apigee.getdeployment
+        with:
+          organization: rest.organization
+          environment: rest.environment
+          api: rest.api
+          revision: rest.revision
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/organizations/{organization}/apiproducts
+      name: listapiproducts
+      operations:
+      - method: GET
+        name: listapiproducts
+        description: Google Apigee List API products
+        call: google-apigee.listapiproducts
+        with:
+          organization: rest.organization
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/organizations/{organization}/apiproducts
+      name: createapiproduct
+      operations:
+      - method: POST
+        name: createapiproduct
+        description: Google Apigee Create an API product
+        call: google-apigee.createapiproduct
+        with:
+          organization: rest.organization
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/organizations/{organization}/developers
+      name: listdevelopers
+      operations:
+      - method: GET
+        name: listdevelopers
+        description: Google Apigee List developers
+        call: google-apigee.listdevelopers
+        with:
+          organization: rest.organization
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/organizations/{organization}/developers
+      name: createdeveloper
+      operations:
+      - method: POST
+        name: createdeveloper
+        description: Google Apigee Create a developer
+        call: google-apigee.createdeveloper
+        with:
+          organization: rest.organization
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    port: 9090
+    namespace: google-apigee-mcp
+    transport: http
+    description: MCP adapter for Google Apigee API for AI agent use.
+    tools:
+    - name: listorganizations
+      description: Google Apigee List organizations
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-apigee.listorganizations
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getorganization
+      description: Google Apigee Get an organization
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-apigee.getorganization
+      with:
+        organization: tools.organization
+      inputParameters:
+      - name: organization
+        type: string
+        description: organization
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listapiproxies
+      description: Google Apigee List API proxies
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-apigee.listapiproxies
+      with:
+        organization: tools.organization
+      inputParameters:
+      - name: organization
+        type: string
+        description: organization
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createapiproxy
+      description: Google Apigee Create an API proxy
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-apigee.createapiproxy
+      with:
+        organization: tools.organization
+        name: tools.name
+      inputParameters:
+      - name: organization
+        type: string
+        description: organization
+        required: true
+      - name: name
+        type: string
+        description: name
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getapiproxy
+      description: Google Apigee Get an API proxy
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-apigee.getapiproxy
+      with:
+        organization: tools.organization
+        api: tools.api
+      inputParameters:
+      - name: organization
+        type: string
+        description: organization
+        required: true
+      - name: api
+        type: string
+        description: api
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deleteapiproxy
+      description: Google Apigee Delete an API proxy
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: google-apigee.deleteapiproxy
+      with:
+        organization: tools.organization
+        api: tools.api
+      inputParameters:
+      - name: organization
+        type: string
+        description: organization
+        required: true
+      - name: api
+        type: string
+        description: api
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listenvironments
+      description: Google Apigee List environments
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-apigee.listenvironments
+      with:
+        organization: tools.organization
+      inputParameters:
+      - name: organization
+        type: string
+        description: organization
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createenvironment
+      description: Google Apigee Create an environment
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-apigee.createenvironment
+      with:
+        organization: tools.organization
+      inputParameters:
+      - name: organization
+        type: string
+        description: organization
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getenvironment
+      description: Google Apigee Get an environment
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-apigee.getenvironment
+      with:
+        organization: tools.organization
+        environment: tools.environment
+      inputParameters:
+      - name: organization
+        type: string
+        description: organization
+        required: true
+      - name: environment
+        type: string
+        description: environment
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: deleteenvironment
+      description: Google Apigee Delete an environment
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: google-apigee.deleteenvironment
+      with:
+        organization: tools.organization
+        environment: tools.environment
+      inputParameters:
+      - name: organization
+        type: string
+        description: organization
+        required: true
+      - name: environment
+        type: string
+        description: environment
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: getdeployment
+      description: Google Apigee Get deployment status
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-apigee.getdeployment
+      with:
+        organization: tools.organization
+        environment: tools.environment
+        api: tools.api
+        revision: tools.revision
+      inputParameters:
+      - name: organization
+        type: string
+        description: organization
+        required: true
+      - name: environment
+        type: string
+        description: environment
+        required: true
+      - name: api
+        type: string
+        description: api
+        required: true
+      - name: revision
+        type: string
+        description: revision
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listapiproducts
+      description: Google Apigee List API products
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-apigee.listapiproducts
+      with:
+        organization: tools.organization
+      inputParameters:
+      - name: organization
+        type: string
+        description: organization
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createapiproduct
+      description: Google Apigee Create an API product
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-apigee.createapiproduct
+      with:
+        organization: tools.organization
+      inputParameters:
+      - name: organization
+        type: string
+        description: organization
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: listdevelopers
+      description: Google Apigee List developers
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: google-apigee.listdevelopers
+      with:
+        organization: tools.organization
+      inputParameters:
+      - name: organization
+        type: string
+        description: organization
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: createdeveloper
+      description: Google Apigee Create a developer
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: google-apigee.createdeveloper
+      with:
+        organization: tools.organization
+      inputParameters:
+      - name: organization
+        type: string
+        description: organization
+        required: true
+      outputParameters:
+      - type: object
+        mapping: $.
