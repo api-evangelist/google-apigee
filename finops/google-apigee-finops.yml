@@ -1,5 +1,6 @@
 specification: FinOps Framework
 specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
 alignedWith:
   framework: FinOps Foundation Framework
   frameworkUrl: https://www.finops.org/framework/
@@ -8,160 +9,113 @@ alignedWith:
   dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
 provider: Google Apigee
 providerId: google-apigee
-publisherName: Google Apigee
-serviceCategory: API
+publisherName: Google LLC
+serviceCategory: API Management
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: true
 tags:
-  - API Gateway
   - API Management
-  - Enterprise
+  - API Gateway
   - Google Cloud
   - FinOps
-  - Cost Management
   - FOCUS
-description: FinOps framework definition for the Google Apigee API surface. Provides a FOCUS-aligned mapping
-  for cost allocation, usage measurement, and unit-economics reporting across the provider's APIs.
-principles:
-  - name: Visibility
-    description: Make API consumption costs visible to engineering, product, and finance teams in near
-      real-time.
-  - name: Allocation
-    description: Tag every chargeable API call with the consuming team, environment, application, and
-      feature so cost can be allocated.
-  - name: Optimization
-    description: Continuously evaluate request patterns, caching, batching, and tier selection to reduce
-      cost per useful unit of work.
-  - name: Accountability
-    description: Establish budget owners and chargeback or showback flows for each consuming team.
-domains:
-  - name: Understand Usage and Cost
-    capabilities:
-      - Data Ingestion
-      - Allocation
-      - Reporting and Analytics
-      - Anomaly Management
-  - name: Quantify Business Value
-    capabilities:
-      - Planning and Estimating
-      - Forecasting
-      - Budgeting
-      - Benchmarking
-      - Unit Economics
-  - name: Optimize Usage and Cost
-    capabilities:
-      - Architecting for Cloud
-      - Rate Optimization
-      - Workload Optimization
-      - Cloud Sustainability
-      - Licensing and SaaS
-  - name: Manage the FinOps Practice
-    capabilities:
-      - FinOps Practice Operations
-      - FinOps Education and Enablement
-      - Invoicing and Chargeback
-      - Onboarding Workloads
-      - Intersecting Disciplines
+description: 'FOCUS-aligned FinOps for Apigee: PAYG bills hourly per environment (Base/Intermediate/Comprehensive)
+  plus API call volume; subscription tiers (Standard/Enterprise/Enterprise Plus) bill annually with negotiated
+  caps. Apigee invoices flow through the standard Google Cloud billing surface so spend appears in the
+  Cloud Billing export alongside other GCP services.'
+sources:
+  - https://cloud.google.com/apigee/pricing
+  - https://docs.cloud.google.com/apigee/docs/api-platform/reference/limits
+  - https://cloud.google.com/billing/docs
 billingModel:
-  pricingCategory: Usage-Based
-  billingFrequency: Monthly
+  pricingCategory: Pay-As-You-Go + Subscription
+  billingFrequency: Monthly (PAYG) / Annual (Subscription)
   billingCurrency: USD
   chargeCategories:
     - Usage
     - Purchase
     - Tax
-    - Credit
     - Adjustment
-  chargeFrequency: Recurring
+    - Credit
 focusColumns:
-  ServiceName: Google Apigee
-  ServiceCategory: Developer Tools / API
-  ProviderName: Google Apigee
-  PublisherName: Google Apigee
-  InvoiceIssuerName: Google Apigee
-  PricingCategory: Usage-Based
-  PricingUnit: request
+  ServiceName: Apigee API Management
+  ServiceCategory: API Management
+  ProviderName: Google Cloud
+  PublisherName: Google LLC
+  InvoiceIssuerName: Google LLC
   BillingCurrency: USD
   ChargeCategory: Usage
 meters:
-  - name: api_requests
-    description: Count of billable API requests
+  - name: environment_hours
+    description: Hours that an Apigee environment is provisioned
+    unit: environment-hour
+    aggregation: sum
+    dimensions:
+      - environment_type
+      - region
+      - organization
+  - name: api_calls
+    description: API calls processed by Apigee proxies
     unit: request
     aggregation: sum
     dimensions:
-      - api
-      - endpoint
-      - tier
-      - region
-      - consumer
-  - name: data_egress
-    description: Bytes returned over the network in API responses
-    unit: GB
+      - organization
+      - environment
+      - api_proxy
+      - api_product
+  - name: gateway_nodes
+    description: Provisioned gateway capacity above included environment baseline
+    unit: node-hour
     aggregation: sum
     dimensions:
-      - api
       - region
-      - consumer
-  - name: compute_seconds
-    description: Server-side compute consumed by the request, where applicable
-    unit: second
+      - environment
+  - name: subscription_fee
+    description: Annual subscription seat (Standard / Enterprise / Enterprise Plus)
+    unit: contract-year
     aggregation: sum
     dimensions:
-      - api
-      - endpoint
       - tier
+  - name: advanced_api_security
+    description: Advanced API Security add-on volume
+    unit: request
+    aggregation: sum
+    dimensions:
+      - environment
+  - name: api_hub_usage
+    description: API Hub catalog and discovery usage
+    unit: request
+    aggregation: sum
+    dimensions:
+      - organization
 apis:
-  - name: Google Apigee
-    baseURL: ''
-    tags:
-      - API Gateway
-      - API Management
-      - Google Cloud
-    serviceName: Google Apigee
-    serviceCategory: API
-  - name: Google Apigee Management API
+  - name: Apigee API
     baseURL: https://apigee.googleapis.com
-    tags:
-      - Administration
-      - API Management
-      - Google Cloud
-      - REST
-    serviceName: Google Apigee Management API
-    serviceCategory: API
-  - name: Google Apigee Connect API
+    serviceName: Apigee API
+    serviceCategory: API Management
+  - name: Apigee Connect API
     baseURL: https://apigeeconnect.googleapis.com
-    tags:
-      - Administration
-      - Connectivity
-      - Google Cloud
-      - Hybrid
-    serviceName: Google Apigee Connect API
-    serviceCategory: API
-  - name: Google Apigee API Hub
+    serviceName: Apigee Connect API
+    serviceCategory: API Management
+  - name: Apigee Hub API
     baseURL: https://apihub.googleapis.com
-    tags:
-      - API Catalog
-      - API Governance
-      - API Hub
-      - Google Cloud
-    serviceName: Google Apigee API Hub
-    serviceCategory: API
-  - name: Google Apigee Analytics API
-    baseURL: https://apigee.googleapis.com
-    tags:
-      - Analytics
-      - API Management
-      - Google Cloud
-      - Reporting
-    serviceName: Google Apigee Analytics API
-    serviceCategory: API
-unitEconomics:
-  - name: Cost per 1K Requests
-    metric: billed_cost / (api_requests / 1000)
-    target: TBD
-  - name: Cost per Active Consumer
-    metric: billed_cost / active_consumers
-    target: TBD
+    serviceName: Apigee Hub API
+    serviceCategory: API Catalog
+principles:
+  - name: Visibility
+    description: Enable the Cloud Billing detailed export to BigQuery; filter to service `apigee.googleapis.com`
+      to see per-environment hourly cost and API call charges. Use Apigee Analytics for proxy-level traffic.
+  - name: Allocation
+    description: Tag API proxies, products, and environments with org/team labels; pivot the Cloud Billing
+      export by these labels to chargeback to consuming product teams.
+  - name: Optimization
+    description: Right-size environment type (Base vs Intermediate vs Comprehensive); collapse non-prod
+      environments outside business hours; cache responses with the ResponseCache policy to cut backend
+      and Apigee throughput cost; commit to a Subscription tier when annual run-rate exceeds PAYG break-even.
+  - name: Accountability
+    description: Assign each Apigee environment and API product to a budget owner; configure Cloud Billing
+      budget alerts at 50/80/100% of monthly forecast and route to the owner.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
