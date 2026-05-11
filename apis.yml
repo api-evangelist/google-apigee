@@ -160,6 +160,10 @@ common:
     url: https://stackoverflow.com/questions/tagged/apigee
   - type: YouTube
     url: https://www.youtube.com/@googlecloudtech
+  - type: Integrations
+    url: https://cloud.google.com/marketplace
+integrations:
+  - name: Become a Partner
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
