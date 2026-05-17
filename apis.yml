@@ -31,7 +31,7 @@ apis:
     properties:
       - type: Documentation
         url: https://cloud.google.com/apigee/docs
-      - type: Getting Started
+      - type: GettingStarted
         url: https://cloud.google.com/apigee/docs/api-platform/get-started/overview
   - aid: google-apigee:google-apigee-management-api
     name: Google Apigee Management API
@@ -59,7 +59,7 @@ apis:
         url: openapi/openapi.yml
       - type: JSONSchema
         url: json-schema/json-schema.yml
-      - type: Change Log
+      - type: ChangeLog
         url: https://cloud.google.com/apigee/docs/release/notes/apigee-release-notes
   - aid: google-apigee:google-apigee-connect-api
     name: Google Apigee Connect API
@@ -99,11 +99,11 @@ apis:
     properties:
       - type: Documentation
         url: https://cloud.google.com/apigee/docs/apihub/what-is-api-hub
-      - type: Getting Started
+      - type: GettingStarted
         url: https://cloud.google.com/apigee/docs/apihub/get-started-api-hub
       - type: Reference
         url: https://cloud.google.com/apigee/docs/reference/apis/apihub/rest
-      - type: Change Log
+      - type: ChangeLog
         url: https://cloud.google.com/apigee/docs/apihub/release-notes
   - aid: google-apigee:google-apigee-analytics-api
     name: Google Apigee Analytics API
@@ -132,7 +132,7 @@ common:
     url: https://cloud.google.com/apigee
   - type: Documentation
     url: https://cloud.google.com/apigee/docs
-  - type: Getting Started
+  - type: GettingStarted
     url: https://cloud.google.com/apigee/docs/api-platform/get-started/overview
   - type: Authentication
     url: https://cloud.google.com/apigee/docs/api-platform/system-administration/using-oauth2
@@ -140,23 +140,23 @@ common:
     url: https://console.cloud.google.com/apigee
   - type: Blog
     url: https://cloud.google.com/blog/products/api-management
-  - type: Change Log
+  - type: ChangeLog
     url: https://cloud.google.com/apigee/docs/release/notes/apigee-release-notes
-  - type: Status
+  - type: StatusPage
     url: https://status.cloud.google.com/
   - type: Support
     url: https://cloud.google.com/apigee/support
   - type: Pricing
     url: https://cloud.google.com/apigee/pricing
-  - type: Terms of Service
+  - type: TermsOfService
     url: https://cloud.google.com/terms/
-  - type: Privacy Policy
+  - type: PrivacyPolicy
     url: https://cloud.google.com/terms/cloud-privacy-notice
-  - type: GitHub Organization
+  - type: GitHubOrganization
     url: https://github.com/apigee
   - type: GitHubRepository
     url: https://github.com/apigee/api-platform-samples
-  - type: Stack Overflow
+  - type: StackOverflow
     url: https://stackoverflow.com/questions/tagged/apigee
   - type: YouTube
     url: https://www.youtube.com/@googlecloudtech
