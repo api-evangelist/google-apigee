@@ -1,0 +1,55 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Organization",
+  "title": "Organization",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The organization resource name."
+    },
+    "displayName": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "projectId": {
+      "type": "string"
+    },
+    "analyticsRegion": {
+      "type": "string"
+    },
+    "runtimeType": {
+      "type": "string",
+      "enum": [
+        "RUNTIME_TYPE_UNSPECIFIED",
+        "CLOUD",
+        "HYBRID"
+      ]
+    },
+    "state": {
+      "type": "string",
+      "enum": [
+        "STATE_UNSPECIFIED",
+        "CREATING",
+        "ACTIVE",
+        "DELETING"
+      ]
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lastModifiedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "environments": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

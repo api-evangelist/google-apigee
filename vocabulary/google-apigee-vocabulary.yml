@@ -1,0 +1,6 @@
+name: Google Apigee Domain Vocabulary
+provider: Google Apigee
+providerId: google-apigee
+description: Tag-derived vocabulary for the Google Apigee API surface; sourced from openapi/ tags.
+terms:
+- term: Organizations

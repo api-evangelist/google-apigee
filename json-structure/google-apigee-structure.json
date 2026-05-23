@@ -1,0 +1,219 @@
+{
+  "provider": "Google Apigee",
+  "providerId": "google-apigee",
+  "kind": "json-structure",
+  "description": "Structural overview of the Google Apigee API surface; extracted from openapi/.",
+  "schemaCount": 12,
+  "operationCount": 15,
+  "schemas": [
+    {
+      "name": "Organization",
+      "type": "object",
+      "propertyCount": 10,
+      "required": []
+    },
+    {
+      "name": "ApiProxy",
+      "type": "object",
+      "propertyCount": 4,
+      "required": []
+    },
+    {
+      "name": "ApiProxyRevision",
+      "type": "object",
+      "propertyCount": 7,
+      "required": []
+    },
+    {
+      "name": "Environment",
+      "type": "object",
+      "propertyCount": 6,
+      "required": []
+    },
+    {
+      "name": "Deployment",
+      "type": "object",
+      "propertyCount": 5,
+      "required": []
+    },
+    {
+      "name": "ApiProduct",
+      "type": "object",
+      "propertyCount": 13,
+      "required": []
+    },
+    {
+      "name": "Developer",
+      "type": "object",
+      "propertyCount": 11,
+      "required": []
+    },
+    {
+      "name": "Operation",
+      "type": "object",
+      "propertyCount": 5,
+      "required": []
+    },
+    {
+      "name": "ListOrganizationsResponse",
+      "type": "object",
+      "propertyCount": 1,
+      "required": []
+    },
+    {
+      "name": "ListApiProxiesResponse",
+      "type": "object",
+      "propertyCount": 1,
+      "required": []
+    },
+    {
+      "name": "ListApiProductsResponse",
+      "type": "object",
+      "propertyCount": 1,
+      "required": []
+    },
+    {
+      "name": "ListDevelopersResponse",
+      "type": "object",
+      "propertyCount": 1,
+      "required": []
+    }
+  ],
+  "operations": [
+    {
+      "method": "GET",
+      "path": "/v1/organizations",
+      "operationId": "listOrganizations",
+      "summary": "Google Apigee List organizations",
+      "tags": [
+        "Organizations"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/organizations/{organization}",
+      "operationId": "getOrganization",
+      "summary": "Google Apigee Get an organization",
+      "tags": [
+        "Organizations"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/organizations/{organization}/apis",
+      "operationId": "listApiProxies",
+      "summary": "Google Apigee List API proxies",
+      "tags": [
+        "Organizations"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/organizations/{organization}/apis",
+      "operationId": "createApiProxy",
+      "summary": "Google Apigee Create an API proxy",
+      "tags": [
+        "Organizations"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/organizations/{organization}/apis/{api}",
+      "operationId": "getApiProxy",
+      "summary": "Google Apigee Get an API proxy",
+      "tags": [
+        "Organizations"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/v1/organizations/{organization}/apis/{api}",
+      "operationId": "deleteApiProxy",
+      "summary": "Google Apigee Delete an API proxy",
+      "tags": [
+        "Organizations"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/organizations/{organization}/environments",
+      "operationId": "listEnvironments",
+      "summary": "Google Apigee List environments",
+      "tags": [
+        "Organizations"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/organizations/{organization}/environments",
+      "operationId": "createEnvironment",
+      "summary": "Google Apigee Create an environment",
+      "tags": [
+        "Organizations"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/organizations/{organization}/environments/{environment}",
+      "operationId": "getEnvironment",
+      "summary": "Google Apigee Get an environment",
+      "tags": [
+        "Organizations"
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/v1/organizations/{organization}/environments/{environment}",
+      "operationId": "deleteEnvironment",
+      "summary": "Google Apigee Delete an environment",
+      "tags": [
+        "Organizations"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/organizations/{organization}/environments/{environment}/apis/{api}/revisions/{revision}/deployments",
+      "operationId": "getDeployment",
+      "summary": "Google Apigee Get deployment status",
+      "tags": [
+        "Organizations"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/organizations/{organization}/apiproducts",
+      "operationId": "listApiProducts",
+      "summary": "Google Apigee List API products",
+      "tags": [
+        "Organizations"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/organizations/{organization}/apiproducts",
+      "operationId": "createApiProduct",
+      "summary": "Google Apigee Create an API product",
+      "tags": [
+        "Organizations"
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/v1/organizations/{organization}/developers",
+      "operationId": "listDevelopers",
+      "summary": "Google Apigee List developers",
+      "tags": [
+        "Organizations"
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/v1/organizations/{organization}/developers",
+      "operationId": "createDeveloper",
+      "summary": "Google Apigee Create a developer",
+      "tags": [
+        "Organizations"
+      ]
+    }
+  ]
+}

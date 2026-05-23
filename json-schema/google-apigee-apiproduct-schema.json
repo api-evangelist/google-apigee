@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/ApiProduct",
+  "title": "ApiProduct",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "displayName": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "approvalType": {
+      "type": "string",
+      "enum": [
+        "manual",
+        "auto"
+      ]
+    },
+    "proxies": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "environments": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "quota": {
+      "type": "string"
+    },
+    "quotaInterval": {
+      "type": "string"
+    },
+    "quotaTimeUnit": {
+      "type": "string"
+    },
+    "scopes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "attributes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "lastModifiedAt": {
+      "type": "string",
+      "format": "date-time"
+    }
+  }
+}

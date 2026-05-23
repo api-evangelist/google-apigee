@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Deployment",
+  "title": "Deployment",
+  "type": "object",
+  "properties": {
+    "environment": {
+      "type": "string"
+    },
+    "apiProxy": {
+      "type": "string"
+    },
+    "revision": {
+      "type": "string"
+    },
+    "deployStartTime": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "state": {
+      "type": "string",
+      "enum": [
+        "RUNTIME_STATE_UNSPECIFIED",
+        "READY",
+        "PROGRESSING",
+        "ERROR"
+      ]
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "#/components/schemas/Operation",
+  "title": "Operation",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "done": {
+      "type": "boolean"
+    },
+    "metadata": {
+      "type": "object"
+    },
+    "response": {
+      "type": "object"
+    },
+    "error": {
+      "type": "object"
+    }
+  }
+}
