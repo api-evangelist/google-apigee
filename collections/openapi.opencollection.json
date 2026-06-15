@@ -1,0 +1,337 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Google Apigee API",
+    "version": "v1"
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Organizations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Google Apigee List organizations",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://apigee.googleapis.com/v1/organizations"
+          },
+          "docs": "Lists Apigee organizations accessible to the caller."
+        },
+        {
+          "info": {
+            "name": "Google Apigee Get an organization",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://apigee.googleapis.com/v1/organizations/:organization",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Gets the profile for an Apigee organization."
+        },
+        {
+          "info": {
+            "name": "Google Apigee List API proxies",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://apigee.googleapis.com/v1/organizations/:organization/apis",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Lists API proxies in an organization."
+        },
+        {
+          "info": {
+            "name": "Google Apigee Create an API proxy",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://apigee.googleapis.com/v1/organizations/:organization/apis",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "name",
+                "value": "",
+                "type": "query"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates an API proxy in an organization."
+        },
+        {
+          "info": {
+            "name": "Google Apigee Get an API proxy",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://apigee.googleapis.com/v1/organizations/:organization/apis/:api",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "api",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Gets an API proxy including its revisions."
+        },
+        {
+          "info": {
+            "name": "Google Apigee Delete an API proxy",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://apigee.googleapis.com/v1/organizations/:organization/apis/:api",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "api",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deletes an API proxy and all its revisions."
+        },
+        {
+          "info": {
+            "name": "Google Apigee List environments",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://apigee.googleapis.com/v1/organizations/:organization/environments",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Lists environments in an organization."
+        },
+        {
+          "info": {
+            "name": "Google Apigee Create an environment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://apigee.googleapis.com/v1/organizations/:organization/environments",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates an environment in an organization."
+        },
+        {
+          "info": {
+            "name": "Google Apigee Get an environment",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://apigee.googleapis.com/v1/organizations/:organization/environments/:environment",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "environment",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Gets the profile for an environment."
+        },
+        {
+          "info": {
+            "name": "Google Apigee Delete an environment",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://apigee.googleapis.com/v1/organizations/:organization/environments/:environment",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "environment",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Deletes an environment from an organization."
+        },
+        {
+          "info": {
+            "name": "Google Apigee Get deployment status",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://apigee.googleapis.com/v1/organizations/:organization/environments/:environment/apis/:api/revisions/:revision/deployments",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "environment",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "api",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "revision",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Gets the deployment status of an API proxy revision."
+        },
+        {
+          "info": {
+            "name": "Google Apigee List API products",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://apigee.googleapis.com/v1/organizations/:organization/apiproducts",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Lists API products in an organization."
+        },
+        {
+          "info": {
+            "name": "Google Apigee Create an API product",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://apigee.googleapis.com/v1/organizations/:organization/apiproducts",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates an API product in an organization."
+        },
+        {
+          "info": {
+            "name": "Google Apigee List developers",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://apigee.googleapis.com/v1/organizations/:organization/developers",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Lists developers in an organization."
+        },
+        {
+          "info": {
+            "name": "Google Apigee Create a developer",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://apigee.googleapis.com/v1/organizations/:organization/developers",
+            "params": [
+              {
+                "name": "organization",
+                "value": "",
+                "type": "path"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a developer in an organization."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
