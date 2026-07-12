@@ -117,6 +117,10 @@ apis:
         url: >-
           https://cloud.google.com/apigee/docs/reference/apis/apigee/rest/v1/organizations.environments.analytics.exports
 common:
+  - type: VulnerabilityDisclosure
+    url: security/google-apigee-vulnerability-disclosure.yml
+  - type: DomainSecurity
+    url: security/google-apigee-domain-security.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/apigee-legacy
   - type: Website
