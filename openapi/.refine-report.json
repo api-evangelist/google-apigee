@@ -1,0 +1,14 @@
+{
+  "provider": "google-apigee",
+  "sources": [
+    "google-apigee-organizations-api-openapi.yml"
+  ],
+  "outputs": [
+    "google-apigee-organizations-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
