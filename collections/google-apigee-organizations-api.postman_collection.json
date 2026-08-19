@@ -1,0 +1,1591 @@
+{
+  "item": [
+    {
+      "id": "3f25db22-4f4c-4edc-84bc-765e99e8a960",
+      "name": "Organizations",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "42c099d4-1198-4cf3-accc-d72a86211bf0",
+          "name": "Google Apigee List organizations",
+          "request": {
+            "name": "Google Apigee List organizations",
+            "description": {
+              "content": "Lists Apigee organizations accessible to the caller.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "organizations"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "75963f9e-47f8-4c5d-9d88-0d98988e0e3d",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "organizations"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"organizations\": [\n    {\n      \"name\": \"string\",\n      \"displayName\": \"string\",\n      \"description\": \"string\",\n      \"projectId\": \"string\",\n      \"analyticsRegion\": \"string\",\n      \"runtimeType\": \"RUNTIME_TYPE_UNSPECIFIED\",\n      \"state\": \"CREATING\",\n      \"createdAt\": \"2008-05-08T13:20:05.642Z\",\n      \"lastModifiedAt\": \"2016-02-27T07:49:06.781Z\",\n      \"environments\": [\n        \"string\",\n        \"string\"\n      ]\n    },\n    {\n      \"name\": \"string\",\n      \"displayName\": \"string\",\n      \"description\": \"string\",\n      \"projectId\": \"string\",\n      \"analyticsRegion\": \"string\",\n      \"runtimeType\": \"RUNTIME_TYPE_UNSPECIFIED\",\n      \"state\": \"CREATING\",\n      \"createdAt\": \"2005-10-23T14:42:41.970Z\",\n      \"lastModifiedAt\": \"1961-08-19T01:04:53.981Z\",\n      \"environments\": [\n        \"string\",\n        \"string\"\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "e501c6e7-2b63-4c2b-85f0-3300d9dca452",
+          "name": "Google Apigee Get an organization",
+          "request": {
+            "name": "Google Apigee Get an organization",
+            "description": {
+              "content": "Gets the profile for an Apigee organization.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "organizations",
+                ":organization"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "91a23c15-5801-4ec1-b6cf-4776a3feecf4",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "organizations",
+                    ":organization"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"displayName\": \"string\",\n  \"description\": \"string\",\n  \"projectId\": \"string\",\n  \"analyticsRegion\": \"string\",\n  \"runtimeType\": \"RUNTIME_TYPE_UNSPECIFIED\",\n  \"state\": \"DELETING\",\n  \"createdAt\": \"1959-03-22T05:15:10.233Z\",\n  \"lastModifiedAt\": \"1954-03-13T18:37:45.799Z\",\n  \"environments\": [\n    \"string\",\n    \"string\"\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "72a2d0f0-4764-4ae4-837d-103f6fbc5a36",
+          "name": "Google Apigee List API proxies",
+          "request": {
+            "name": "Google Apigee List API proxies",
+            "description": {
+              "content": "Lists API proxies in an organization.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "organizations",
+                ":organization",
+                "apis"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "40585641-1abb-4ba0-8ce5-07b31b9006c1",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "organizations",
+                    ":organization",
+                    "apis"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"proxies\": [\n    {\n      \"name\": \"string\",\n      \"revision\": [\n        \"string\",\n        \"string\"\n      ],\n      \"latestRevisionId\": \"string\",\n      \"metaData\": {\n        \"createdAt\": \"string\",\n        \"lastModifiedAt\": \"string\"\n      }\n    },\n    {\n      \"name\": \"string\",\n      \"revision\": [\n        \"string\",\n        \"string\"\n      ],\n      \"latestRevisionId\": \"string\",\n      \"metaData\": {\n        \"createdAt\": \"string\",\n        \"lastModifiedAt\": \"string\"\n      }\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "22e59e09-3fc3-48cc-8f15-8837d42fd46f",
+          "name": "Google Apigee Create an API proxy",
+          "request": {
+            "name": "Google Apigee Create an API proxy",
+            "description": {
+              "content": "Creates an API proxy in an organization.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "organizations",
+                ":organization",
+                "apis"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "name",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"revision\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"latestRevisionId\": \"<string>\",\n  \"metaData\": {\n    \"createdAt\": \"<string>\",\n    \"lastModifiedAt\": \"<string>\"\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "341113fd-5dde-4d56-88a0-edc38d43e5b5",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "organizations",
+                    ":organization",
+                    "apis"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "name",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"revision\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"latestRevisionId\": \"<string>\",\n  \"metaData\": {\n    \"createdAt\": \"<string>\",\n    \"lastModifiedAt\": \"<string>\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"revision\": \"string\",\n  \"basepaths\": [\n    \"string\",\n    \"string\"\n  ],\n  \"displayName\": \"string\",\n  \"description\": \"string\",\n  \"createdAt\": \"1996-02-02T11:13:00.270Z\",\n  \"lastModifiedAt\": \"1985-08-10T17:06:42.362Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "bf3f9f14-1923-4517-ac76-ef5d00af2ac5",
+          "name": "Google Apigee Get an API proxy",
+          "request": {
+            "name": "Google Apigee Get an API proxy",
+            "description": {
+              "content": "Gets an API proxy including its revisions.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "organizations",
+                ":organization",
+                "apis",
+                ":api"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "api",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "77945ecb-65c4-4f9b-90c8-d5d9959cd26a",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "organizations",
+                    ":organization",
+                    "apis",
+                    ":api"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "api",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"revision\": [\n    \"string\",\n    \"string\"\n  ],\n  \"latestRevisionId\": \"string\",\n  \"metaData\": {\n    \"createdAt\": \"string\",\n    \"lastModifiedAt\": \"string\"\n  }\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "b1994b6b-e589-42dd-8b1a-5534445d39be",
+          "name": "Google Apigee Delete an API proxy",
+          "request": {
+            "name": "Google Apigee Delete an API proxy",
+            "description": {
+              "content": "Deletes an API proxy and all its revisions.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "organizations",
+                ":organization",
+                "apis",
+                ":api"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "api",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "76fab74c-d614-4426-9829-7e92e06123a3",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "organizations",
+                    ":organization",
+                    "apis",
+                    ":api"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "api",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "68b43703-8ca5-45a1-b347-bcc984567b67",
+          "name": "Google Apigee List environments",
+          "request": {
+            "name": "Google Apigee List environments",
+            "description": {
+              "content": "Lists environments in an organization.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "organizations",
+                ":organization",
+                "environments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "2e7b7ccc-bc7b-46c5-b2c9-93be9bb99d89",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "organizations",
+                    ":organization",
+                    "environments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "[\n  \"string\",\n  \"string\"\n]",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "d2040a2a-3826-4a5a-a5f3-bdc694193036",
+          "name": "Google Apigee Create an environment",
+          "request": {
+            "name": "Google Apigee Create an environment",
+            "description": {
+              "content": "Creates an environment in an organization.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "organizations",
+                ":organization",
+                "environments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"state\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"lastModifiedAt\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "c995a558-996b-4e19-8874-c81097996f8c",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "organizations",
+                    ":organization",
+                    "environments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"state\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"lastModifiedAt\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"done\": false,\n  \"metadata\": {},\n  \"response\": {},\n  \"error\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "46bfccf7-0a77-4c6e-af64-6969b5ff0531",
+          "name": "Google Apigee Get an environment",
+          "request": {
+            "name": "Google Apigee Get an environment",
+            "description": {
+              "content": "Gets the profile for an environment.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "organizations",
+                ":organization",
+                "environments",
+                ":environment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "environment",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "6e0e99e5-f05e-42a9-b105-4999e396c8a6",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "organizations",
+                    ":organization",
+                    "environments",
+                    ":environment"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "environment",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"displayName\": \"string\",\n  \"description\": \"string\",\n  \"state\": \"ACTIVE\",\n  \"createdAt\": \"1997-06-18T05:28:13.165Z\",\n  \"lastModifiedAt\": \"1980-04-06T12:43:47.656Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "81ff6f57-6d59-43e2-af33-60b7ff1c1b00",
+          "name": "Google Apigee Delete an environment",
+          "request": {
+            "name": "Google Apigee Delete an environment",
+            "description": {
+              "content": "Deletes an environment from an organization.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "organizations",
+                ":organization",
+                "environments",
+                ":environment"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "environment",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "edc7f408-98c1-4b36-848c-d688a4e58924",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "organizations",
+                    ":organization",
+                    "environments",
+                    ":environment"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "environment",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"done\": false,\n  \"metadata\": {},\n  \"response\": {},\n  \"error\": {}\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "43876590-be92-4507-977b-7688a752ef34",
+          "name": "Google Apigee Get deployment status",
+          "request": {
+            "name": "Google Apigee Get deployment status",
+            "description": {
+              "content": "Gets the deployment status of an API proxy revision.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "organizations",
+                ":organization",
+                "environments",
+                ":environment",
+                "apis",
+                ":api",
+                "revisions",
+                ":revision",
+                "deployments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "environment",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "api",
+                  "description": "(Required) "
+                },
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "revision",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "42373480-9ce6-4a46-bf45-309843f9305a",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "organizations",
+                    ":organization",
+                    "environments",
+                    ":environment",
+                    "apis",
+                    ":api",
+                    "revisions",
+                    ":revision",
+                    "deployments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "environment",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "api",
+                      "description": "(Required) "
+                    },
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "revision",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"environment\": \"string\",\n  \"apiProxy\": \"string\",\n  \"revision\": \"string\",\n  \"deployStartTime\": \"2020-07-27T07:59:46.939Z\",\n  \"state\": \"RUNTIME_STATE_UNSPECIFIED\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "dbf20745-7809-401c-842b-66512360e50d",
+          "name": "Google Apigee List API products",
+          "request": {
+            "name": "Google Apigee List API products",
+            "description": {
+              "content": "Lists API products in an organization.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "organizations",
+                ":organization",
+                "apiproducts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "de2958fe-c57a-428a-8f17-8c8be09a26ec",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "organizations",
+                    ":organization",
+                    "apiproducts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"apiProduct\": [\n    {\n      \"name\": \"string\",\n      \"displayName\": \"string\",\n      \"description\": \"string\",\n      \"approvalType\": \"manual\",\n      \"proxies\": [\n        \"string\",\n        \"string\"\n      ],\n      \"environments\": [\n        \"string\",\n        \"string\"\n      ],\n      \"quota\": \"string\",\n      \"quotaInterval\": \"string\",\n      \"quotaTimeUnit\": \"string\",\n      \"scopes\": [\n        \"string\",\n        \"string\"\n      ],\n      \"attributes\": [\n        {\n          \"name\": \"string\",\n          \"value\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"value\": \"string\"\n        }\n      ],\n      \"createdAt\": \"2011-03-19T16:21:05.939Z\",\n      \"lastModifiedAt\": \"1947-04-17T00:35:07.254Z\"\n    },\n    {\n      \"name\": \"string\",\n      \"displayName\": \"string\",\n      \"description\": \"string\",\n      \"approvalType\": \"manual\",\n      \"proxies\": [\n        \"string\",\n        \"string\"\n      ],\n      \"environments\": [\n        \"string\",\n        \"string\"\n      ],\n      \"quota\": \"string\",\n      \"quotaInterval\": \"string\",\n      \"quotaTimeUnit\": \"string\",\n      \"scopes\": [\n        \"string\",\n        \"string\"\n      ],\n      \"attributes\": [\n        {\n          \"name\": \"string\",\n          \"value\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"value\": \"string\"\n        }\n      ],\n      \"createdAt\": \"2023-06-03T20:07:36.856Z\",\n      \"lastModifiedAt\": \"2026-02-19T02:34:48.998Z\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2be3d0ba-fc17-4da3-92d3-76e32a76fd6e",
+          "name": "Google Apigee Create an API product",
+          "request": {
+            "name": "Google Apigee Create an API product",
+            "description": {
+              "content": "Creates an API product in an organization.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "organizations",
+                ":organization",
+                "apiproducts"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"approvalType\": \"<string>\",\n  \"proxies\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"environments\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"quota\": \"<string>\",\n  \"quotaInterval\": \"<string>\",\n  \"quotaTimeUnit\": \"<string>\",\n  \"scopes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"attributes\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"createdAt\": \"<dateTime>\",\n  \"lastModifiedAt\": \"<dateTime>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "1d7ebfab-b48f-4339-9ffe-ad9e362d5c4b",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "organizations",
+                    ":organization",
+                    "apiproducts"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"<string>\",\n  \"displayName\": \"<string>\",\n  \"description\": \"<string>\",\n  \"approvalType\": \"<string>\",\n  \"proxies\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"environments\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"quota\": \"<string>\",\n  \"quotaInterval\": \"<string>\",\n  \"quotaTimeUnit\": \"<string>\",\n  \"scopes\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"attributes\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ],\n  \"createdAt\": \"<dateTime>\",\n  \"lastModifiedAt\": \"<dateTime>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"name\": \"string\",\n  \"displayName\": \"string\",\n  \"description\": \"string\",\n  \"approvalType\": \"manual\",\n  \"proxies\": [\n    \"string\",\n    \"string\"\n  ],\n  \"environments\": [\n    \"string\",\n    \"string\"\n  ],\n  \"quota\": \"string\",\n  \"quotaInterval\": \"string\",\n  \"quotaTimeUnit\": \"string\",\n  \"scopes\": [\n    \"string\",\n    \"string\"\n  ],\n  \"attributes\": [\n    {\n      \"name\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"value\": \"string\"\n    }\n  ],\n  \"createdAt\": \"1949-01-15T15:51:48.682Z\",\n  \"lastModifiedAt\": \"1973-02-07T11:16:22.046Z\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "72a77c63-d9f4-43f4-bc18-e14bcc505840",
+          "name": "Google Apigee List developers",
+          "request": {
+            "name": "Google Apigee List developers",
+            "description": {
+              "content": "Lists developers in an organization.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "organizations",
+                ":organization",
+                "developers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "e22cb005-d040-4b82-8fe8-e508d95b0dd7",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "organizations",
+                    ":organization",
+                    "developers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"developer\": [\n    {\n      \"email\": \"k7kMoQ@pjhGaKyeYmOCfVcPfwtKktjwf.hahc\",\n      \"firstName\": \"string\",\n      \"lastName\": \"string\",\n      \"userName\": \"string\",\n      \"organizationName\": \"string\",\n      \"status\": \"inactive\",\n      \"apps\": [\n        \"string\",\n        \"string\"\n      ],\n      \"developerId\": \"string\",\n      \"createdAt\": \"2002-04-30T09:54:39.779Z\",\n      \"lastModifiedAt\": \"2026-03-18T12:32:51.958Z\",\n      \"attributes\": [\n        {\n          \"name\": \"string\",\n          \"value\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"value\": \"string\"\n        }\n      ]\n    },\n    {\n      \"email\": \"9FvtzBJ@ftRXnCnWyvCItcBGEAavQkiHBp.frt\",\n      \"firstName\": \"string\",\n      \"lastName\": \"string\",\n      \"userName\": \"string\",\n      \"organizationName\": \"string\",\n      \"status\": \"inactive\",\n      \"apps\": [\n        \"string\",\n        \"string\"\n      ],\n      \"developerId\": \"string\",\n      \"createdAt\": \"1972-05-31T07:00:10.059Z\",\n      \"lastModifiedAt\": \"1982-12-01T06:16:38.345Z\",\n      \"attributes\": [\n        {\n          \"name\": \"string\",\n          \"value\": \"string\"\n        },\n        {\n          \"name\": \"string\",\n          \"value\": \"string\"\n        }\n      ]\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "2ab13c1e-3916-4852-a5d2-e7540af45a35",
+          "name": "Google Apigee Create a developer",
+          "request": {
+            "name": "Google Apigee Create a developer",
+            "description": {
+              "content": "Creates a developer in an organization.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "v1",
+                "organizations",
+                ":organization",
+                "developers"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "organization",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"<email>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"userName\": \"<string>\",\n  \"organizationName\": \"<string>\",\n  \"status\": \"<string>\",\n  \"apps\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"developerId\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"lastModifiedAt\": \"<dateTime>\",\n  \"attributes\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "ce76131e-4fb8-4fe4-87f6-a573e04937f4",
+              "name": "Successful response",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "v1",
+                    "organizations",
+                    ":organization",
+                    "developers"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "organization",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"<email>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"userName\": \"<string>\",\n  \"organizationName\": \"<string>\",\n  \"status\": \"<string>\",\n  \"apps\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"developerId\": \"<string>\",\n  \"createdAt\": \"<dateTime>\",\n  \"lastModifiedAt\": \"<dateTime>\",\n  \"attributes\": [\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    },\n    {\n      \"name\": \"<string>\",\n      \"value\": \"<string>\"\n    }\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"email\": \"QAfhlEeaElj@pURhvuJe.bqoj\",\n  \"firstName\": \"string\",\n  \"lastName\": \"string\",\n  \"userName\": \"string\",\n  \"organizationName\": \"string\",\n  \"status\": \"inactive\",\n  \"apps\": [\n    \"string\",\n    \"string\"\n  ],\n  \"developerId\": \"string\",\n  \"createdAt\": \"1997-06-08T21:34:14.167Z\",\n  \"lastModifiedAt\": \"1976-12-30T04:37:44.929Z\",\n  \"attributes\": [\n    {\n      \"name\": \"string\",\n      \"value\": \"string\"\n    },\n    {\n      \"name\": \"string\",\n      \"value\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://apigee.googleapis.com",
+      "key": "baseUrl"
+    }
+  ],
+  "info": {
+    "_postman_id": "b3d9f86c-99dd-4bdd-9264-aaa80ef298dc",
+    "name": "Google Apigee Organizations API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Apigee API enables full lifecycle API management including creating and deploying API proxies, managing organizations and environments, configuring API products, and monitoring API analytics.\n\nContact Support:\n Name: Google Cloud",
+      "type": "text/plain"
+    }
+  }
+}
