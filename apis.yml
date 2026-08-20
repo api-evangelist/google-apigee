@@ -111,6 +111,8 @@ apis:
   humanURL: https://cloud.google.com/apigee
   baseURL: https://apigee.googleapis.com
   tags:
+  - Organization
+  tags_raw:
   - Organizations
   properties:
   - type: OpenAPI
