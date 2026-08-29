@@ -4,6 +4,18 @@ description: >-
   Google Apigee is a full-lifecycle API management platform offering an API gateway, developer portal, analytics, and
   monetization capabilities for enterprise-grade API programs across cloud, on-premise, and hybrid environments.
 type: Index
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: true
+  label: Hosted service · you call their endpoint
+  confidence: high
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: paid
   onboarding: approval
